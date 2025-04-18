@@ -1,10 +1,11 @@
 'use client';
+import dynamic from 'next/dynamic';
 
+const MarketingCalendar = dynamic(() => import('../components/calendar/MarketingCalendar'), { ssr: false });
+const ActionForm = dynamic(() => import('../components/forms/ActionForm'), { ssr: false });
+const MarketingTimeline = dynamic(() => import('../components/timeline/MarketingTimeline'), { ssr: false });
+const PdfExporter = dynamic(() => import('../components/export/PdfExporter'), { ssr: false });
 import React, { useState, useEffect } from 'react';
-import MarketingCalendar, { MarketingAction } from '../components/calendar/MarketingCalendar';
-import ActionForm from '../components/forms/ActionForm';
-import MarketingTimeline from '../components/timeline/MarketingTimeline';
-import PdfExporter from '../components/export/PdfExporter';
 import { format } from 'date-fns';
 
 export default function Home() {
